@@ -143,7 +143,7 @@ To deploy we need the cluster to have an access to the image. By default, Kubern
 
 ```console
 $ docker tag _image_ _username_/_image_
-$ docker push _username_/_image_
+$ docker image push _username_/_image_
 ```
 
 <text-box name="Example applications" variant="hint">
@@ -344,9 +344,9 @@ When updating anything in Kubernetes the usage of delete is actually an anti-pat
 Your basic workflow may look something like this:
 
 ```console
-$ docker build -t <image>:<new_tag>
+$ docker image build -t <image>:<new_tag>
 
-$ docker push <image>:<new_tag>
+$ docker image push <image>:<new_tag>
 ```
 
 Then edit deployment.yaml so that the tag is updated to the \<new_tag\> and

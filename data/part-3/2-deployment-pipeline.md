@@ -36,7 +36,7 @@ and add index.html with the following content
 </html>
 ```
 
-Let's make sure that everything works by doing `docker build . -t colorcontent && docker run -p 3000:80 colorcontent` to build and run it and then accessing it through [http://localhost:3000](http://localhost:3000). Next is the addition of manifests for our website.
+Let's make sure that everything works by doing `docker image build . -t colorcontent && docker run -p 3000:80 colorcontent` to build and run it and then accessing it through [http://localhost:3000](http://localhost:3000). Next is the addition of manifests for our website.
 
 **manifests/service.yaml**
 
@@ -77,7 +77,7 @@ spec:
           image: jakousa/colorcontent
 ```
 
-Next, to test our manifests deploy this into our cluster. Above I had pushed the built image using `docker push`.
+Next, to test our manifests deploy this into our cluster. Above I had pushed the built image using `docker image push`.
 
 ```console
 $ kubectl apply -f manifests/service.yaml
@@ -226,7 +226,7 @@ Now the setup is done and next is building the image:
 ```yaml
 ...
     - name: Build
-      run: docker build --tag "$IMAGE_WITH_TAG" .
+      run: docker image build --tag "$IMAGE_WITH_TAG" .
 ```
 
 Publish similarily:
@@ -234,7 +234,7 @@ Publish similarily:
 ```yaml
 ...
     - name: Publish
-      run: docker push "$IMAGE_WITH_TAG"
+      run: docker image push "$IMAGE_WITH_TAG"
 ```
 
 And finally deployment. We'll setup Kustomize first:
@@ -305,10 +305,10 @@ jobs:
     - run: gcloud container clusters get-credentials "$GKE_CLUSTER" --zone "$GKE_ZONE"
 
     - name: Build
-      run: docker build --tag "$IMAGE_WITH_TAG" .
+      run: docker image build --tag "$IMAGE_WITH_TAG" .
 
     - name: Publish
-      run: docker push "$IMAGE_WITH_TAG"
+      run: docker image push "$IMAGE_WITH_TAG"
 
     - name: Set up Kustomize
       run: |-
