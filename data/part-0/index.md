@@ -88,7 +88,7 @@ If you feel like you don’t want to be part of the list of contributors you can
 Here is a link to the repository to find the tabs for issues and pull requests: [https://github.com/kubernetes-hy/kubernetes-hy.github.io](https://github.com/kubernetes-hy/kubernetes-hy.github.io)
 
 
-## Experience quizz ##
+## Experience quiz ##
 
 Thank you for answering. My PhD depends on this.
 

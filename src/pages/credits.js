@@ -35,7 +35,7 @@ const Credits = () => (
       <h2>mooc.fi framework</h2>
 
       <p>
-        The material framework, including the quizz system and other
+        The material framework, including the quiz system and other
         functionality, have been created by{" "}
         <OutboundLink
           href="https://github.com/nygrenh"
