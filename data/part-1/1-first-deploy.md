@@ -87,10 +87,10 @@ We'll use k3d to create a group of docker containers that run k3s. The installat
 $ k3d cluster create -a 2
 ```
 
-This created a Kubernetes cluster with 2 agent nodes. As they're in docker you can confirm that they exist with `docker ps`.
+This created a Kubernetes cluster with 2 agent nodes. As they're in docker you can confirm that they exist with `docker container ls`.
 
 ```console
-$ docker ps
+$ docker container ls
   CONTAINER ID        IMAGE                      COMMAND                  CREATED             STATUS              PORTS                             NAMES
   11543a6b5015        rancher/k3d-proxy:v3.0.0   "/bin/sh -c nginx-pr…"   16 seconds ago      Up 14 seconds       80/tcp, 0.0.0.0:57734->6443/tcp   k3d-k3s-default-serverlb
   f17e07a77061        rancher/k3s:latest         "/bin/k3s agent"         26 seconds ago      Up 24 seconds                                         k3d-k3s-default-agent-1

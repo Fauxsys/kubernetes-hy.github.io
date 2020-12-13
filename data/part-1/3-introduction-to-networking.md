@@ -60,7 +60,7 @@ Because we are running our cluster inside docker with k3d we will have to do a f
 Opening a route from outside of the cluster to the pod will not be enough if we have no means of accessing the cluster inside the containers!
 
 ```console
-$ docker ps
+$ docker container ls
   CONTAINER ID        IMAGE                      COMMAND                  CREATED             STATUS              PORTS                             NAMES
   b60f6c246ebb        rancher/k3d-proxy:v3.0.0   "/bin/sh -c nginx-pr…"   2 hours ago         Up 2 hours          80/tcp, 0.0.0.0:58264->6443/tcp   k3d-k3s-default-serverlb
   553041f96fc6        rancher/k3s:latest         "/bin/k3s agent"         2 hours ago         Up 2 hours                                            k3d-k3s-default-agent-1
